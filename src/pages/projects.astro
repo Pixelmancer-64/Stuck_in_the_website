@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from "astro-icon";
 
 import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
@@ -22,7 +23,7 @@ const projects = (await getCollection('projects')).sort(
 		<main class="wrapper stack gap-8">
 			<Hero
 				title="My Projects"
-				tagline="See my most recent projects below to get an idea of my past experience."
+				tagline="Feel free to take a look at all my creations!"
 				align="start"
 			/>
 			<Grid variant="offset">
