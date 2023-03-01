@@ -12,7 +12,6 @@ const projects = (await getCollection('projects')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
-console.log(projects)
 ---
 
 <BaseLayout
