@@ -1,5 +1,5 @@
 {
-	"name": "teal-tower",
+	"name": "stuck_in_the_website",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -10,6 +10,8 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^2.0.14"
+		"@astrojs/mdx": "^0.17.0",
+		"astro": "^2.0.14",
+		"astro-icon": "^0.8.0"
 	}
 }
