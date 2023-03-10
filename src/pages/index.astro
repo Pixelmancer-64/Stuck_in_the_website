@@ -28,7 +28,7 @@ const projects = (await getCollection("projects"))
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
-        <Hero title="Hi, I'm Hugo Billé" tagline="I code stuff" align="start">
+        <Hero title="Hi, I'm Hugo Billé" tagline="I code cool stuff" align="start">
           <div class="roles">
             <Pill><Icon name="tabler:code" size="1.33em" />Developer</Pill>
             <Pill><Icon name="tabler:plant" size="1.33em" />Gardner</Pill>
@@ -36,72 +36,15 @@ const projects = (await getCollection("projects"))
           </div>
         </Hero>
 
-        <img
-          alt="Hugo Billé smiling in a red plaid shirt and tortoise shell glasses"
-          width="480"
-          height="620"
-          src="/assets/hero_image.jpg"
-        />
+        <canvas
+          id="canvas"
+          aria-label="Background lighthouse animation"
+          role="img"></canvas>
       </header>
 
       <Skills />
     </div>
-
-    <!-- <main class="wrapper stack gap-20 lg:gap-48">
-      <section class="section with-background with-cta">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Selected Projects</h3>
-          <p>
-            Take a look below at some of my featured projects for clients from
-            the past few years.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="offset">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
-
-      </section>
-
-      <section class="section with-background bg-variant">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
-          <p>
-            I have been fortunate enough to recieve praise for my projects in
-            several publications. Take a look below to learn more.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="small">
-            {
-              [
-                "Medium",
-                "BuzzFeed",
-                "The Next Web",
-                "awwwards.",
-                "TechCrunch",
-              ].map((brand) => (
-                <li class="mention-card">
-                  <p>{brand}</p>
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
-      </section>
-    </main>
-
-    <ContactCTA /> -->
-  </div> 
+  </div>
 </BaseLayout>
 
 <style>
@@ -110,6 +53,18 @@ const projects = (await getCollection("projects"))
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    min-height: 500px;
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  #canvas {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
   }
 
   .roles {
@@ -225,8 +180,6 @@ const projects = (await getCollection("projects"))
     }
   }
 
-  /* ====================================================== */
-
   .mention-card {
     display: flex;
     height: 7rem;
@@ -247,3 +200,87 @@ const projects = (await getCollection("projects"))
     }
   }
 </style>
+
+<script>
+  const canvas = document.querySelector("#canvas")! as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d")!;
+  const parentNode = canvas.parentNode! as HTMLElement;
+
+  canvas.width = parentNode.clientWidth;
+  canvas.height = parentNode.clientHeight;
+
+  interface Pixel {
+    x: number;
+    y: number;
+    size: number;
+    color: string;
+    direction: { x: number; y: number };
+    angle: number;
+  }
+
+  let pixels: Array<Pixel> = [];
+
+  for (let i = 0; i < 1000; i++) {
+    pixels.push(
+      create_pixel(
+        Math.random() * canvas.width - canvas.width*1.1,
+        Math.random() * canvas.height,
+        50
+      )
+    );
+    draw_pixel(pixels[i]);
+  }
+
+  let animation;
+  animation_loop();
+
+  function animation_loop() {
+    animation = requestAnimationFrame(animation_loop);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    pixels.forEach((pixel, index) => {
+      update_pixel(pixel);
+      draw_pixel(pixel);
+
+      if (pixel.size <= 0.5) {
+        pixels.splice(index, 1);
+      }
+    });
+
+    if (pixels.length == 0) {
+      cancelAnimationFrame(animation);
+    }
+  }
+
+  function create_pixel(x: number, y: number, size: number): Pixel {
+    return {
+      x: x,
+      y: y,
+      size: size,
+      color: create_random_color(),
+      direction: { x: 1, y: 1 },
+      angle: Math.random() * 2 - 1,
+    };
+  }
+
+  function draw_pixel(pixel: Pixel): void {
+    ctx.fillStyle = pixel.color;
+    ctx.beginPath();
+    ctx.rect(pixel.x, pixel.y, pixel.size, pixel.size);
+    ctx.fill();
+  }
+
+  function update_pixel(pixel: Pixel): void {
+    pixel.x += Math.cos(pixel.angle) * (0.25 * pixel.size) * pixel.direction.x;
+    pixel.y += Math.sin(pixel.angle) * pixel.direction.y;
+    pixel.size -= Math.random() * 0.3 + 0.001;
+    pixel.angle += pixel.angle * 0.002;
+  }
+
+  function create_random_color() {
+    return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
+      Math.random() * 255
+    })`;
+  }
+</script>

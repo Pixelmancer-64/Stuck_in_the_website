@@ -64,11 +64,15 @@ function init() {
     pixels.push(new Pixel(0, 0, random(5, 100)));
   })();
 
-  pixels.sort((a, b)=>{
-    return a.size > b.size 
-  })
+  pixels.sort((a, b) => {
+    return a.size > b.size;
+  });
 
-  const PixelFountain = new Emiter(canvas.width / 2, canvas.height / 1.5, pixels);
+  const PixelFountain = new Emiter(
+    canvas.width / 2,
+    canvas.height / 1.5,
+    pixels
+  );
   let animationRequest;
 
   function animate() {
@@ -88,9 +92,9 @@ function init() {
     if (e.key == "Home") {
       animate();
     }
-    if(e.key == "Delete"){
+    if (e.key == "Delete") {
       cancelAnimationFrame(animationRequest);
-      init()
+      init();
     }
   });
 }

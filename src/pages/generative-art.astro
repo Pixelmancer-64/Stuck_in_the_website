@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+import GenerativeArtPreview from '../components/GenerativeArtPreview.astro';
+
+const projects = (await getCollection('generative-art'));
+
+---
+
+<BaseLayout
+	title="My Projects | Hugo Billé"
+	description="Learn about Hugo Billé's most recent projects"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="My Projects"
+				tagline="Feel free to take a look at all my creations!"
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					projects.map((project) => (
+						<li>
+							<GenerativeArtPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+	</div>
+</BaseLayout>
