@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -61,7 +61,7 @@ class Particle{
 // controller
 function init(mx,my){
     let nParticles = 100;
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let signal = Math.round(Math.random()) ? 1 : -1
         let size = (Math.random()*50) + 5;
         let x = mx;

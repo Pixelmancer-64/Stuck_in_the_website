@@ -82,8 +82,9 @@ class Canvas {
 
     document.body.onmousedown = function () {
       Canvas.mouse.pressed = true
-      if(Canvas.mouse.x != null){
-        document.querySelector('h1').remove()
+      const warning = document.querySelector('h1')
+      if(Canvas.mouse.x != null && warning){
+        warning.remove()
       }
     }
     document.body.onmouseup = function () {

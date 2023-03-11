@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-    <title>Marching Squares</title>
-</head>
-
-<body>
-
-    <canvas id="canvas"></canvas>
-
-</body>
-<script src="noise.js"></script>
-<script src="scripts.js"></script>
-
-</html>
+<BaseLayout
+  title="Marching Squares | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/marching-squares.js"
+  ></script>
+</BaseLayout>

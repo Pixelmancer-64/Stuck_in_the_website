@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -42,7 +42,7 @@ function init(){
     let nParticles = 9999;
     let hand0 = Math.random()
     let rand = Math.random()*9999
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let signal = Math.round(Math.random()) ? 1 : -1
         let otherSignal = Math.round(Math.random()) ? 1 : -1
 

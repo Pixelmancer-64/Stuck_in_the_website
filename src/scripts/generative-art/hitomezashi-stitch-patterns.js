@@ -1,4 +1,4 @@
-import { start, random } from "../functionalModules.js";
+import { start, random } from "../helpers/functional_modules";
 
 function main(){
 

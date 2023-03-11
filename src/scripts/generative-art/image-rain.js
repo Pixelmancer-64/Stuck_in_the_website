@@ -1,7 +1,9 @@
 const myImage = new Image();
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-myImage.src = '/img/eye.jpeg'
+myImage.src = '/assets/sorry.png'
+let pixelBrightness;
+let pixelColor;
 
 myImage.addEventListener('load', function(){
 canvas.width = myImage.width;
@@ -76,7 +78,7 @@ class Particle{
     function init(){
         const nParticles = 3000;
         particlesArray = [];
-            for(i = 0; i < nParticles; i++){
+            for(let i = 0; i < nParticles; i++){
                 particlesArray.push(new Particle);
             }
     }
@@ -86,7 +88,7 @@ class Particle{
         ctx.globalAlpha = 0.02;
         ctx.fillStyle = 'rgb(0,0,0)';
         ctx.fillRect(0,0,canvas.width, canvas.height);
-        for(i=0; i<particlesArray.length; i++){
+        for(let i=0; i<particlesArray.length; i++){
             particlesArray[i].update();
             ctx.globalAlpha = particlesArray[i].speed;
             particlesArray[i].draw();

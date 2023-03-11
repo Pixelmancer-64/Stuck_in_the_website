@@ -1,8 +1,8 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-const refresh = document.getElementById("refresh")
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+let myTree;
 
 class Tree{
     constructor(x, y, length, angle, width, color){
@@ -63,8 +63,5 @@ window.addEventListener('resize',function(){
     canvas.height = innerHeight;
     controller();
 });
-refresh.onclick = function(){
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-    controller();
-}
+
 controller();

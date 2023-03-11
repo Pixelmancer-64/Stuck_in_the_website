@@ -1,7 +1,8 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+let particlesArray = []
 
 let mouse ={
     x: undefined,
@@ -67,7 +68,7 @@ class Particle{
 function init(){
     particlesArray = [];
     let nParticles = 100;
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let size = (Math.random()*5) + 1;
         let x = (Math.random() * ((innerWidth - size * 2 )-(size * 2)) + size * 2);
         let y = (Math.random() * ((innerHeight - size * 2 )-(size * 2)) + size * 2);
@@ -86,7 +87,7 @@ function animate(){
     requestAnimationFrame(animate);
     ctx.clearRect(0,0,innerWidth,innerHeight);
 
-    for(i=0; i<particlesArray.length; i++){
+    for(let i=0; i<particlesArray.length; i++){
         particlesArray[i].update();
     }
     connect();
@@ -95,8 +96,8 @@ function animate(){
 //connect dots
 function connect(){
     let opacityValue = 1;
-    for(a=0; a<particlesArray.length; a++){
-        for(b = a; b<particlesArray.length;b++){
+    for(let a=0; a<particlesArray.length; a++){
+        for(let b = a; b<particlesArray.length;b++){
             let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
             if(distance < (canvas.width/7) * (canvas.height/7)){
                 opacityValue = 1 - (distance/30000);

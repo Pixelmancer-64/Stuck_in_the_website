@@ -6,6 +6,7 @@ let animationRequest;
 let particlesArray;
 let animation;
 let hue = 0;
+let newParticle;
 
 window.onload = function () {
   canvas = document.getElementById("canvas");

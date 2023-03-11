@@ -1,5 +1,5 @@
 /**@type {HTMLCanvasElement} */
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 if (window.innerWidth <= window.innerHeight) {

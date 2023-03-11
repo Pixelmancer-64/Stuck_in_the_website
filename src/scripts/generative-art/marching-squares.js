@@ -1,6 +1,6 @@
-function usableColor(color, alpha = 1) {
-  return `rgba(${color.r},${color.g},${color.b}, ${alpha})`;
-}
+import { createNoise2D } from "simplex-noise";
+
+const noise = createNoise2D();
 
 class Configs {
   static colors = [
@@ -39,7 +39,7 @@ class Canvas {
   static rows;
   static gradient;
   static grid = [];
-  static canvas = document.getElementById("canvas");
+  static canvas = document.querySelector("canvas");
 
   constructor() {
     Canvas.ctx = Canvas.canvas.getContext("2d");
@@ -55,8 +55,8 @@ class Canvas {
     Canvas.canvas.width = window.innerWidth;
     Canvas.canvas.height = window.innerHeight;
 
-    Canvas.width = canvas.width;
-    Canvas.height = canvas.height;
+    Canvas.width = Canvas.canvas.width;
+    Canvas.height = Canvas.canvas.height;
 
     Canvas.cols = Math.floor(Canvas.width / Configs.cellSize) + 2;
     Canvas.rows = Math.floor(Canvas.height / Configs.cellSize) + 2;
@@ -73,16 +73,16 @@ class Canvas {
     Canvas.ctx.strokeStyle = Canvas.gradient;
     Canvas.ctx.lineWidth = Configs.lineWidth;
 
-    let inc = 0.3;
-    noise.seed(Math.random() * 255);
-    let x = 0;
+    let inc = 9;
+    let x = 1;
+
     for (let i = 0; i < Canvas.rows; i++) {
       x += inc;
       let y = 0;
       Canvas.grid[i] = [];
       for (let j = 0; j < Canvas.cols; j++) {
         y += inc;
-        Canvas.grid[i][j] = noise.simplex2(x, y);
+        Canvas.grid[i][j] = noise(x, y);
       }
     }
 

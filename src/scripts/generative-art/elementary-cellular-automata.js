@@ -1,3 +1,5 @@
+import {randomInt, Square} from "../helpers/assistant"
+
 class Canvas {
   static ctx;
   static width;
@@ -87,7 +89,7 @@ class Canvas {
         new Square(size, size, e ? "white" : "black", {
           x: index * size,
           y: this.i * size,
-        }).fill();
+        }).fill(1, Canvas.ctx);
       });
 
       this.generation.forEach((e, index) => {

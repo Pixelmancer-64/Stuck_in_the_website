@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -34,7 +34,7 @@ class Particle{
 function init(){
     // particlesArray = [];
     let nParticles = 10;
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let size = (Math.random()*5);
         let x = (Math.random() * ((innerWidth - size * 2 )-(size * 2)) + size * 3);
         //speed
@@ -49,7 +49,7 @@ function animate(){
     requestAnimationFrame(animate);
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    for(i=0; i<particlesArray.length; i++){
+    for(let i=0; i<particlesArray.length; i++){
         particlesArray[i].update();
     }
     if(particlesArray.length < 10000) init();

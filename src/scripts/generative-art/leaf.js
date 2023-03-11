@@ -2,6 +2,7 @@
 let canvas;
 let ctx;
 let animationRequest;
+let newParticle;
 
 const random_rgb = () => {
   let offset = 50;

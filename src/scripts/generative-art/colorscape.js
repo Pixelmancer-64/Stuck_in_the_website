@@ -1,3 +1,4 @@
+import {start, rect, map} from "../helpers/functional_modules"
 
 function draw() {
   const [canvas, ctx] = start(

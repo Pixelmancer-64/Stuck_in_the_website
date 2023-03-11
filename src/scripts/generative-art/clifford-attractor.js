@@ -27,7 +27,8 @@ window.onload = function(){
         canvas.width = window.innerHeight;
         canvas.height = window.innerHeight;
     }
-    slider()
+    
+    new Particle().update();
 }
 
 class Particle{
@@ -99,9 +100,4 @@ class Particle{
 
         // animationRequest = requestAnimationFrame(this.update.bind(this))
     }
-}
-
-function slider(){
-    newParticle = new Particle()    
-    newParticle.update();
 }

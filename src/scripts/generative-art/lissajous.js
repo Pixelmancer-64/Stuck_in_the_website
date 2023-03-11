@@ -4,7 +4,7 @@ import {
   random_color,
   random,
   loop,
-} from "../functionalModules.js";
+} from "../helpers/functional_modules";
 const { cos, sin } = Math;
 
 function init(element) {

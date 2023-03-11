@@ -3,7 +3,7 @@ import {
   start,
   clear,
   random_color,
-} from "../functionalModules.js";
+} from "../helpers/functional_modules";
 const { sqrt } = Math;
 
 function init() {

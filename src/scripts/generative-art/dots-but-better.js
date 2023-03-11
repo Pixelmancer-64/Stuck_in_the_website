@@ -6,7 +6,7 @@ import {
   random,
   random_color,
   clear,
-} from "../functionalModules.js";
+} from "../helpers/functional_modules";
 
 function init() {
   class Dot {

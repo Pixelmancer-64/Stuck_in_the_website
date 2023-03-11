@@ -1,3 +1,5 @@
+import {start, random, point, objColorToString} from "../helpers/functional_modules"
+
 const mouse = {
   x: 0,
   y: 0,

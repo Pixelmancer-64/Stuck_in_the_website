@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -66,7 +66,7 @@ class Particle{
 // controller
 function init(mx,my){
     let nParticles = 5;
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let signal = Math.round(Math.random()) ? 1 : -1
         let size = (Math.random()*25) + 1;
         let x = mx;
@@ -94,8 +94,8 @@ function animate(){
 }
 
 function connect(){
-    for(a=0; a<particlesArray.length; a++){
-        for(b = a; b<particlesArray.length;b++){
+    for(let a=0; a<particlesArray.length; a++){
+        for(let b = a; b<particlesArray.length;b++){
             let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
             if(distance < (canvas.width/10) * (canvas.height/10)){
                 ctx.strokeStyle= particlesArray[a].color;

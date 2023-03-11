@@ -62,7 +62,7 @@ const random_rgb = () => {
 	static height;
   
 	constructor() {
-	  let canvas = document.getElementById("canvas");
+	  let canvas = document.querySelector("canvas");
 	  Canvas.ctx = canvas.getContext("2d");
   
 	  // if (window.innerWidth <= window.innerHeight) {

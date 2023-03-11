@@ -123,7 +123,7 @@ window.onload = function(){
 }
 
 function animationFrame(e){
-    for(i=0; i < e.length; i++){
+    for(let i=0; i < e.length; i++){
         e[i].animate();
     }
     requestAnimationFrame(animationFrame);

@@ -1,5 +1,5 @@
 "use strict";
-import { start, random } from "../functionalModules.js";
+import { start, random } from "../helpers/functional_modules";
 
 // Improvement from this solution https://github.com/DivyanshMittal-exe/Generative-Art/blob/main/RainbowSmoke/smoke.js
 

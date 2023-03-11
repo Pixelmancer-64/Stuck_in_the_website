@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 let eyes;
 let theta;
@@ -91,7 +91,7 @@ function init(){
             radius: Math.floor(Math.random() * 100) + 7 
         };
         overlapping=false;
-        for(i=0; i < eyes.length; i++){
+        for(let i=0; i < eyes.length; i++){
             let previousEye = eyes[i];
             let dx = eye.x - previousEye.x;
             let dy = eye.y - previousEye.y;
@@ -112,7 +112,7 @@ function animate(){
     requestAnimationFrame(animate);
    //ctx.fillStyle = 'rgba(0,0,0,0.05)';
     // ctx.fillRect(0,0,innerWidth,innerHeight);
-    for(i=0; i<eyes.length; i++){
+    for(let i=0; i<eyes.length; i++){
         eyes[i].update();
     }
 }

@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <title>L-System Fractal</title>
-</head>
-<body>
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
 
-    <canvas id="canvas"></canvas>
-
-</body>
-<script src="scripts.js"></script>
-</html>
+<BaseLayout
+  title="L-system Fractal | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas id="canvas"></canvas>
+  <script type="module" src="../src/scripts/generative-art/l-system-fractal.js"
+  ></script>
+</BaseLayout>

@@ -1,3 +1,6 @@
+import {Square} from "../helpers/assistant"
+import {random_color} from "../helpers/functional_modules"
+
 class Canvas {
   static ctx;
   static width;
@@ -56,7 +59,7 @@ class Canvas {
         new Square(size, size, "black", {
           x: j * size,
           y: i * size,
-        }).fill();
+        }).fill(1, Canvas.ctx);
       }
     }
 
@@ -64,9 +67,9 @@ class Canvas {
 
     for (let i = 0; i < this.nAnts; i++) {
       this.ants.push({
-        ant: new Square(size, size, randomColor(), {
-          x: randomInt(Canvas.middleX) * size,
-          y: randomInt(Canvas.middleY) * size,
+        ant: new Square(size, size, random_color(), {
+          x: Math.floor(Math.random() * Canvas.middleX) * size,
+          y: Math.floor(Math.random() * Canvas.middleY) * size,
         }),
         angle: 0,
       });
@@ -133,7 +136,7 @@ class Canvas {
     new Square(size, size, value ? "black" : e.color, {
       x: pos.x * size,
       y: pos.y * size,
-    }).fill();
+    }).fill(1, Canvas.ctx);
 
     this.checkAngle(index);
     if (clockwise) {
@@ -143,7 +146,7 @@ class Canvas {
       this.rotate(this.clock[e.angle].ccw, index);
       this.ants[index].angle -= 90;
     }
-    e.ant.fill(size);
+    e.ant.fill(size, Canvas.ctx);
   }
 
   checkAngle(index) {

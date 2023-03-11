@@ -1,7 +1,7 @@
 const audioPlayer = document.getElementById("audio");
 const audioCtx = new AudioContext();
 const file = document.getElementById("file");
-const canvas = document.getElementById("canvas");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -70,7 +70,7 @@ let hue = 0;
 function init() {
   particlesArray = [];
   let nParticles = 2048 / 4;
-  for (i = 0; i < nParticles; i++) {
+  for (let i = 0; i < nParticles; i++) {
     let size = 5;
     let hue = Math.random() * 360;
     let color = "hsl(" + hue + ",100%,50%)";
@@ -88,7 +88,7 @@ function animate() {
   requestAnimationFrame(animate);
   if (!isPaused) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (i = 0; i < particlesArray.length; i++) {
+    for (let i = 0; i < particlesArray.length; i++) {
       particlesArray[i].update(data[i]);
     }
   }

@@ -1,4 +1,4 @@
-import { random_color } from "../functionalModules.js";
+import { random_color } from "../helpers/functional_modules";
 
 // Set up canvas and context
 const canvas = document.getElementById("canvas");

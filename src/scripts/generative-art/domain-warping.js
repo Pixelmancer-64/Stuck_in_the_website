@@ -1,3 +1,9 @@
+import Canvas from "../helpers/Canvas";
+import { Random, Square } from "../helpers/assistant";
+import { createNoise2D } from "simplex-noise";
+
+const noise = createNoise2D();
+
 class myCanvas extends Canvas {
   constructor(...args) {
     super(...args);
@@ -27,7 +33,7 @@ class myCanvas extends Canvas {
             x: j * this.cellSize,
             y: i * this.cellSize,
           }
-        ).fill();
+        ).fill(1, Canvas.ctx);
       }
     }
   }
@@ -35,13 +41,13 @@ class myCanvas extends Canvas {
   fbm(x, y) {
     let t = 0;
     let amplitude = 1;
-    let frequency = 1;
+    let frequency = .5;
 
     for (let i = 0; i < this.octaves; i++) {
-      t = t + noise.perlin2(
-          (x / this.scale) * frequency,
-          (y / this.scale) * frequency
-        ) * amplitude;
+      t =
+        t +
+        noise((x / this.scale) * frequency, (y / this.scale) * frequency) *
+          amplitude;
       frequency *= this.lacunarity;
       amplitude *= this.gain;
     }

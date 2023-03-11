@@ -1,4 +1,4 @@
-import { start, loop, point, random, clear } from "../functionalModules.js";
+import { start, loop, point, random, clear } from "../helpers/functional_modules";
 
 function init() {
   const [canvas, ctx] = start(

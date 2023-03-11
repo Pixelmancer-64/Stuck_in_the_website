@@ -5,9 +5,10 @@ let FlowField;
 let animationRequest;
 let imageMap = [];
 let cellsSize = 9;
+let pixelColor;
 
 const myImage = new Image();
-myImage.src = '/img/zzzzzuuul.png';
+myImage.src = '/assets/sorry.png';
 
 myImage.addEventListener('load', function(){
     canvas = document.getElementById('canvas');

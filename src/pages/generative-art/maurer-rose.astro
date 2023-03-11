@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <script src="scripts.js" async defer></script>
-    <title>Maurer Rose</title>
-</head>
-<body>
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
 
-    <canvas id="canvas"></canvas>
-
-</body>
-</html>
+<BaseLayout
+  title="Maurer Rose | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/maurer-rose.js"
+  ></script>
+</BaseLayout>

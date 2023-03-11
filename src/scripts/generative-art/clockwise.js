@@ -59,7 +59,7 @@ function init(){
     let nParticles = Math.random() * 9;
     let hand0 = 0
     let rand = Math.random()*99
-    for(i=0; i < nParticles; i++){
+    for(let i=0; i < nParticles; i++){
         let signal = Math.round(Math.random()) ? 1 : -1
         let otherSignal = Math.round(Math.random()) ? 1 : -1
 

@@ -1,6 +1,4 @@
-"use strict";
-
-import { start, clear } from "../functionalModules.js";
+import { start, clear } from "../helpers/functional_modules.js";
 
 function init() {
   const [canvas, ctx] = start(document.querySelector("canvas"), window.innerWidth, window.innerHeight, {

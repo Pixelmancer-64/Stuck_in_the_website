@@ -1,4 +1,6 @@
-// import Canvas from "../canvas_assistant/Canvas"
+import Canvas from "../helpers/Canvas"
+import { Random } from "../helpers/assistant";
+
 class myCanvas extends Canvas {
   constructor(...args){
     super(...args)
