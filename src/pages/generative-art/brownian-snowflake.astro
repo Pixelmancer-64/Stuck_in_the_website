@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon"/>
-    <title>Brownian Snowflake</title>
-</head>
-<body>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-<script src="./scripts.js"></script>
-</html>
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Brownian Snowflake | Pixelmancer" description="I want to find out">
+  <canvas id="canvas"></canvas>
+<script src="/src/scripts/helpers/p5.js"></script>
+<script src="/src/scripts/generative-art/brownian-snowflake.js"></script>
+</BaseLayout>
+
