@@ -4,9 +4,10 @@ let ctx;
 let particlesArray;
 let animation;
 let hue =0;
+let newParticle;
 
 window.onload = function(){ 
-    canvas = document.getElementById('canvas');
+    canvas = document.querySelector('canvas');
     ctx = canvas.getContext('2d');
     if(window.innerWidth <= window.innerHeight){
         canvas.width = window.innerWidth;

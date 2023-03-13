@@ -5,7 +5,7 @@ let FlowField;
 let animationRequest;
 
 window.onload = function(){
-    canvas = document.getElementById('canvas');
+    canvas = document.querySelector('canvas');
     ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

@@ -31,15 +31,14 @@ function random_color (num){
 };
 
 window.onload = function(){
-	canvas = document.getElementById('canvas');
+	canvas = document.querySelector('canvas');
 	ctx = canvas.getContext('2d');
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
-	for(i=0; i < 999; i++){
+	for(let i=0; i < 999; i++){
 		particlesArray.push(new Crawler(ctx, canvas.width, canvas.height))
-	}
-	for(let i=0; i<particlesArray.length; i++){
 		particlesArray[i].animate();
+	
 	}
 }
 

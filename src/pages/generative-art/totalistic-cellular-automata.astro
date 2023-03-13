@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <script src="../canvasAssistance.js"></script>
-    <script src="scripts.js" async defer></script>
-    <title>Totalistic Cellular Automata</title>
-</head>
-<body>
-    <canvas id="canvas"></canvas>
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
 
-</body>
-</html>
+<BaseLayout
+  title="Totalistic Cellular Automata | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/totalistic-cellular-automata.js"
+  ></script>
+</BaseLayout>

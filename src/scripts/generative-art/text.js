@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -99,7 +99,7 @@ function init(){
 function animate(){
     requestAnimationFrame(animate);
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    for(i=0; i<particlesArray.length; i++){
+    for(let i=0; i<particlesArray.length; i++){
         particlesArray[i].update();
     }
 }

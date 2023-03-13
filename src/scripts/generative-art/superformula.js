@@ -1,3 +1,16 @@
+import {random_color, random} from "../helpers/functional_modules"
+
+function usableColor(color, alpha = 1) {
+  return `rgba(${color.r},${color.g},${color.b}, ${alpha})`;
+}
+
+const random_rgb = () => {
+	let r = Math.floor(Math.random() * 255);
+	let g = Math.floor(Math.random() * 255);
+	let b = Math.floor(Math.random() * 255);
+	return {r: r, g: g, b: b}
+};
+
 class Configs {
   static colors = random_color(9);
   static gradient = random_color(9);
@@ -26,7 +39,7 @@ class Canvas {
   };
 
   constructor() {
-    let canvas = document.getElementById("canvas");
+    let canvas = document.querySelector("canvas");
     Canvas.ctx = canvas.getContext("2d");
 
     // if (window.innerWidth <= window.innerHeight) {

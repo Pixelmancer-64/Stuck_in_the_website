@@ -1,6 +1,6 @@
 class Particle {
 	constructor() {
-		let canvas = document.getElementById('canvas');
+		let canvas = document.querySelector('canvas');
 		this.ctx = canvas.getContext('2d');
 
 		canvas.width = window.innerWidth/10;

@@ -24,23 +24,25 @@ const projects = (await getCollection("projects"))
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
+<header class="hero">
+  <Hero title="Hi, I'm Hugo Bille" tagline="I code cool stuff" align="start">
+    <div class="roles">
+      <Pill><Icon name="tabler:code" size="1.33em" />Developer</Pill>
+      <Pill><Icon name="tabler:plant" size="1.33em" />Gardner</Pill>
+      <Pill><Icon name="tabler:math" size="1.33em" />Math lover</Pill>
+    </div>
+  </Hero>
+
+  <canvas
+    id="canvas"
+    aria-label="Background lighthouse animation"
+    role="img"></canvas>
+</header>
+
 <BaseLayout>
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">
-      <header class="hero">
-        <Hero title="Hi, I'm Hugo Billé" tagline="I code cool stuff" align="start">
-          <div class="roles">
-            <Pill><Icon name="tabler:code" size="1.33em" />Developer</Pill>
-            <Pill><Icon name="tabler:plant" size="1.33em" />Gardner</Pill>
-            <Pill><Icon name="tabler:math" size="1.33em" />Math lover</Pill>
-          </div>
-        </Hero>
-
-        <canvas
-          id="canvas"
-          aria-label="Background lighthouse animation"
-          role="img"></canvas>
-      </header>
+      
 
       <Skills />
     </div>
@@ -53,7 +55,7 @@ const projects = (await getCollection("projects"))
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    min-height: 500px;
+    height: 100%;
   }
 
   .hero {

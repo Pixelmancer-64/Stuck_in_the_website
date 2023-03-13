@@ -1,3 +1,5 @@
+import {Square} from "../helpers/assistant"
+
 class Canvas {
   static ctx;
   static width;
@@ -18,7 +20,7 @@ class Canvas {
   };
 
   constructor() {
-    let canvas = document.getElementById("canvas");
+    let canvas = document.querySelector("canvas");
     Canvas.ctx = canvas.getContext("2d");
 
     // if (window.innerWidth <= window.innerHeight) {
@@ -42,29 +44,15 @@ class Canvas {
     this.inc = 0;
     this.i = 0;
 
-    this.interval = randomInt(2) + 1;
-    // [ 1, 0, 1, 0, 0, 0, 0, 1 ]
-    // this.rule = new Array(this.interval * 2 + 1).fill(0);
-    // this.rule = this.rule.map(() => {
-    //   return randomInt(1);
-    // });
+    this.interval = Math.ceil(Math.random() * 2) + 1;
 
     this.rule = [];
 
     for (let i = 0; i < this.interval * 2 + 1; i++) {
-      this.rule[i] = randomInt(1);
+      // round aqui n é a melor maneira
+      this.rule[i] = Math.round(Math.random());
     }
     console.log(this.rule);
-    // this.rule = [
-    //   randomInt(1),
-    //   randomInt(1),
-    //   randomInt(1),
-    //   randomInt(1),
-    //   randomInt(1),
-    //   randomInt(1),
-    // ];
-    // this.rule = [1,0, 2, 0, 2, 1, 0, 0]
-    // this.rule = [1, 1, 0, 1, 0, 1];
 
     this.colors = {
       0: "black",
@@ -93,7 +81,7 @@ class Canvas {
       new Square(size, size, this.colors[e], {
         x: index * size,
         y: this.i * size,
-      }).fill();
+      }).fill(1, Canvas.ctx);
     });
 
     this.generation.forEach((e, index) => {

@@ -4,7 +4,7 @@ import {
   positive_or_negative,
   loop,
   random,
-} from "../functionalModules.js";
+} from "../helpers/functional_modules";
 const { sqrt, cos, sin, atan2, abs } = Math;
 
 function init() {

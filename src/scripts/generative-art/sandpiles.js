@@ -2,9 +2,10 @@
 let canvas;
 let ctx;
 let animationRequest;
+let newParticle;
 
 window.onload = function () {
-  canvas = document.getElementById("canvas");
+  canvas = document.querySelector("canvas");
   ctx = canvas.getContext("2d");
 
   canvas.width = 300;

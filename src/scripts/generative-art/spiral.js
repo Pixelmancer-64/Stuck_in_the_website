@@ -17,13 +17,13 @@ function random_color(num) {
   return aux;
 };
 
-isPrime = function (n) {
+const isPrime = function (n) {
   if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) return false;
   if (n == leastFactor(n)) return true;
   return false;
 }
 
-leastFactor = function (n) {
+const leastFactor = function (n) {
   if (isNaN(n) || !isFinite(n)) return NaN;
   if (n == 0) return 0;
   if (n % 1 || n * n < 2) return 1;
@@ -103,7 +103,7 @@ class Canvas {
   static scale;
   static showAll = false
   constructor() {
-    let canvas = document.getElementById('canvas');
+    let canvas = document.querySelector('canvas');
     Canvas.ctx = canvas.getContext('2d');
 
     // if (window.innerWidth <= window.innerHeight) {

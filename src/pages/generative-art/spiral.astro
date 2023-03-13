@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <title>Spiral</title>
-</head>
-
-<body>
-
-    <canvas id="canvas"></canvas>
-</body>
-
-<script src="./scripts.js"></script>
-
-</html>
+<BaseLayout
+  title="Spiral | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/spiral.js"
+  ></script>
+</BaseLayout>

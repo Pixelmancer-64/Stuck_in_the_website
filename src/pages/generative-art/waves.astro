@@ -1,10 +1,12 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Waves | Pixelmancer" description="I want to find out">
-
-    <canvas id="canvas"></canvas>
-    <script src="waves.js" async defer></script>
-
+<BaseLayout
+  title="Waves | Pixelmancer"
+  description="I want to find out"
+>
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/waves.js"
+  ></script>
 </BaseLayout>

@@ -1,6 +1,7 @@
 let canvas;
 let ctx;
 let animationRequest;
+let newParticle;
 
 const random_rgb = () => {
 	let r = Math.floor(Math.random() * 255);
@@ -18,7 +19,7 @@ function random_color (num){
 };
 
 window.onload = function(){ 
-    canvas = document.getElementById('canvas');
+    canvas = document.querySelector('canvas');
     ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;

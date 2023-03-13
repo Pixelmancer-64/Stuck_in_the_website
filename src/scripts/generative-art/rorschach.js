@@ -1,7 +1,3 @@
-import {
-  random_color
-} from "../functionalModules.js";
-
 function generateRandomShape(ctx, width, height) {
   ctx.beginPath();
   for (let i = 0; i < 10; i++) {

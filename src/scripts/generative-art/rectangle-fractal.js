@@ -1,7 +1,7 @@
 class Canvas {
 
     constructor(){
-        let canvas = document.getElementById('canvas');
+        let canvas = document.querySelector('canvas');
         this.ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -26,11 +26,11 @@ class Canvas {
     animate(){
         this.i = 0;
         // this.length *= .5;
-        var nextSentence = "";
-        for (var i = 0; i < this.sentence.length; i++) {
-            var current = this.sentence.charAt(i);
-            var found = false;
-            for (var j = 0; j < this.rules.length; j++) {
+        let nextSentence = "";
+        for (let i = 0; i < this.sentence.length; i++) {
+            let current = this.sentence.charAt(i);
+            let found = false;
+            for (let j = 0; j < this.rules.length; j++) {
                 if (current == this.rules[j].a) {
                     found = true;
                     nextSentence += this.rules[j].b;
@@ -49,9 +49,9 @@ class Canvas {
     draw(){
         // this.ctx.translate(this.width / 2, this.height / 2);
 
-        // for (var i = 0; i < this.sentence.length; i++) {
+        // for (let i = 0; i < this.sentence.length; i++) {
 
-            var current = this.sentence.charAt(this.i);
+            let current = this.sentence.charAt(this.i);
         
             if (current == "F") {
                 this.hue += .05;

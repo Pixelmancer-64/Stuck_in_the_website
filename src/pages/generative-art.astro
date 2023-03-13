@@ -6,18 +6,18 @@ import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 import GenerativeArtPreview from '../components/GenerativeArtPreview.astro';
 
-const projects = (await getCollection('generative-art'));
+const projects = (await getCollection('generative_art'));
 
 ---
 
 <BaseLayout
-	title="My Projects | Hugo Billé"
+	title="Generative Art | Hugo Billé"
 	description="Learn about Hugo Billé's most recent projects"
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="My Projects"
+				title="Generative Art"
 				tagline="Feel free to take a look at all my creations!"
 				align="start"
 			/>
