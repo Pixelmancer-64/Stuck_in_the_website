@@ -11,7 +11,7 @@ class Tree {
     this.max_branch_distance = min_dist;
     this.growth_rate = growth_rate;
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 10; i++) {
       let position = {
         x: Math.random() * canvas.width,
         y: Math.random() * (canvas.height - 300),
@@ -164,5 +164,5 @@ const [canvas, ctx] = start_canvas(
   window.innerHeight
 );
 
-const bonsai = new Tree(ctx, canvas, 10, 100, 80);
+const bonsai = new Tree(10, 100, 80);
 bonsai.draw()
