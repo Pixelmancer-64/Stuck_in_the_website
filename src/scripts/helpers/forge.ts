@@ -57,7 +57,10 @@ export function start_canvas(
 ) {
   canvas.width = width;
   canvas.height = height;
-  return [canvas, canvas.getContext("2d", options)];
+  return {
+    canvas,
+    ctx: canvas.getContext("2d", options)! as CanvasRenderingContext2D,
+  };
 }
 
 export function clear_canvas(
@@ -122,18 +125,29 @@ export function degrees_to_radians(degrees: number): number {
 export function update_vector(
   vector: Positioned_Vector,
   normalized: NormalizedVector
-): void {
+): Positioned_Vector {
   const deltaX = normalized.magnitude * Math.cos(normalized.direction);
   const deltaY = normalized.magnitude * Math.sin(normalized.direction);
 
-  vector.point.x += deltaX;
-  vector.point.y += deltaY;
+  let new_Vector = structuredClone(vector);
+
+  new_Vector.point.x += deltaX;
+  new_Vector.point.y += deltaY;
+
+  return new_Vector;
 }
 
-export function update_point(point: Point, normalized: NormalizedVector): void {
+export function update_point(
+  point: Point,
+  normalized: NormalizedVector
+): Point {
   const deltaX = normalized.magnitude * Math.cos(normalized.direction);
   const deltaY = normalized.magnitude * Math.sin(normalized.direction);
 
-  point.x += deltaX;
-  point.y += deltaY;
+  let new_Point = structuredClone(point);
+
+  new_Point.x += deltaX;
+  new_Point.y += deltaY;
+
+  return new_Point;
 }

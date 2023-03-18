@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Noise Hills | Pixelmancer" description="I want to find out">
+  <div class="audioContainer" style="margin: 64px">
+    <audio id="audio" controls></audio>
+    <input type="file" id="file" accept="audio/*" />
+  </div>
+
+  <canvas></canvas>
+  <script type="module" src="../src/scripts/generative-art/noise-hills.js"
+  ></script>
+</BaseLayout>
