@@ -12,73 +12,97 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: string }[] = [
-  { label: "GitHub", href: "https://github.com/Pixelmancer-64", icon: "grommet-icons:github" },
-  { label: "Instagram", href: "https://www.instagram.com/_pixelmancer/", icon: "grommet-icons:instagram" },
-  { label: "Linkedin", href: "https://www.linkedin.com/in/hugo-bill%C3%A9/", icon: "grommet-icons:linkedin" },
-  { label: "Email", href: "mailto:hugobillemartins@gmail.com", icon: "grommet-icons:mail" },
-  { label: "Blog", href: "https://blog.pixelmancer.com.br/", icon: "grommet-icons:globe" },
-  { label: "Curriculum vitæ", href: "assets/Curriculo_Hugo_Bille_Martins.pdf", icon: "grommet-icons:document-user" },
-
+  {
+    label: "GitHub",
+    href: "https://github.com/Pixelmancer-64",
+    icon: "grommet-icons:github",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/_pixelmancer/",
+    icon: "grommet-icons:instagram",
+  },
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/hugo-bill%C3%A9/",
+    icon: "grommet-icons:linkedin",
+  },
+  {
+    label: "Email",
+    href: "mailto:hugobillemartins@gmail.com",
+    icon: "grommet-icons:mail",
+  },
+  {
+    label: "Blog",
+    href: "https://blog.pixelmancer.com.br/",
+    icon: "grommet-icons:globe",
+  },
+  {
+    label: "Curriculum vitæ",
+    href: "assets/Curriculo_Hugo_Bille_Martins.pdf",
+    icon: "grommet-icons:document-user",
+  },
 ];
 ---
 
-<nav>
-  <div class="menu-header">
-    <a href="/" class="site-title">
-			<Icon name="simple-icons:saturn" size="2em" />
-      Pixelmancer
-    </a>
-    <menu-button>
-      <template>
-        <button class="menu-button" aria-expanded="false">
-          <span class="sr-only">Menu</span>
-          <Icon name="icon-park-outline:hamburger-button" size="1em" />
-        </button>
-      </template>
-    </menu-button>
-  </div>
-  <div id="menu-content">
-    <ul class="nav-items">
-      {
-        textLinks.map(({ label, href }) => (
-          <li>
-            <a
-              aria-current={Astro.url.pathname === href}
-              class:list={[
-                "link",
-                {
-                  active:
-                    Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
-                },
-              ]}
-              href={href}
-            >
-              {label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <div class="menu-footer">
-      <div class="socials">
+<div class="wrapper">
+  <nav>
+    <div class="menu-header">
+      <a href="/" class="site-title">
+        <Icon name="simple-icons:saturn" size="2em" />
+        Pixelmancer
+      </a>
+      <menu-button>
+        <template>
+          <button class="menu-button" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+            <Icon name="icon-park-outline:hamburger-button" size="1em" />
+          </button>
+        </template>
+      </menu-button>
+    </div>
+    <div id="menu-content">
+      <ul class="nav-items">
         {
-          iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
-              <span class="sr-only">{label}</span>
-			<Icon name={icon} size="1em" />
-
-            </a>
+          textLinks.map(({ label, href }) => (
+            <li>
+              <a
+                aria-current={Astro.url.pathname === href}
+                class:list={[
+                  "link",
+                  {
+                    active:
+                      Astro.url.pathname === href ||
+                      (href !== "/" && Astro.url.pathname.startsWith(href)),
+                  },
+                ]}
+                href={href}
+              >
+                {label}
+              </a>
+            </li>
           ))
         }
-      </div>
+      </ul>
+      <div class="menu-footer">
+        <div class="socials">
+          {
+            iconLinks.map(({ href, icon, label }) => (
+              <a href={href} class="social">
+                <span class="sr-only">{label}</span>
+                <Icon name={icon} size="1em" />
+              </a>
+            ))
+          }
+        </div>
 
-      <div class="theme-toggle">
-        <ThemeToggle />
+        <div class="theme-toggle">
+          <ThemeToggle />
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
 
 <script>
   class MenuButton extends HTMLElement {
@@ -116,12 +140,19 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
 </script>
 
 <style>
+
+  .wrapper{
+    position: absolute;
+  }
+
   nav {
     z-index: 9999;
-    position: relative;
+    position: sticky;
+    width: 100%;
     font-family: var(--font-brand);
     font-weight: 500;
-    margin-bottom: 3.5rem;
+    top: 0;
+    /* margin-bottom: 3.5rem; */
   }
 
   .menu-header {
@@ -148,14 +179,14 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
     padding: 0.5rem;
     font-size: 1.5rem;
     color: var(--gray-300);
-    background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+    /* background: radial-gradient(var(--gray-900), var(--gray-800) 150%); */
     box-shadow: var(--shadow-md);
   }
 
   .menu-button[aria-expanded="true"] {
     color: var(--gray-0);
-    background: linear-gradient(180deg, var(--gray-600), transparent),
-      radial-gradient(var(--gray-900), var(--gray-800) 150%);
+    /* background: linear-gradient(180deg, var(--gray-600), transparent), */
+    /* radial-gradient(var(--gray-900), var(--gray-800) 150%); */
   }
 
   .menu-button[hidden] {
@@ -166,7 +197,7 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
     position: absolute;
     inset: -1px;
     content: "";
-    background: var(--gradient-stroke);
+    /* background: var(--gradient-stroke); */
     border-radius: 999rem;
     z-index: -1;
   }
@@ -186,7 +217,7 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
     line-height: 1.2;
     list-style: none;
     padding: 2rem;
-    background-color: var(--gray-999);
+    /* background-color: var(--gray-999); */
     border-bottom: 1px solid var(--gray-800);
   }
 
@@ -208,7 +239,7 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
     justify-content: space-between;
     gap: 0.75rem;
     padding: 1.5rem 2rem 1.5rem 1.5rem;
-    background-color: var(--gray-999);
+    /* background-color: var(--gray-999); */
     border-radius: 0 0 0.75rem 0.75rem;
     box-shadow: var(--shadow-lg);
   }
@@ -268,14 +299,14 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
       border: 0;
       padding: 0.5rem 0.5625rem;
       background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-      box-shadow: var(--shadow-md);
+      /* box-shadow: var(--shadow-md); */
     }
 
     .nav-items::before {
       position: absolute;
       inset: -1px;
       content: "";
-      background: var(--gradient-stroke);
+      /* background: var(--gradient-stroke); */
       border-radius: 999rem;
       z-index: -1;
     }

@@ -5,14 +5,11 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 import { Icon } from "astro-icon";
 
 // Page section components
-import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
 
 // Content Fetching: List four most recent projects projects
@@ -24,29 +21,26 @@ const projects = (await getCollection("projects"))
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<header class="hero">
-  <Hero title="Hi, I'm Hugo Bille" tagline="I code cool stuff" align="start">
-    <div class="roles">
-      <Pill><Icon name="tabler:code" size="1.33em" />Developer</Pill>
-      <Pill><Icon name="tabler:plant" size="1.33em" />Gardner</Pill>
-      <Pill><Icon name="tabler:math" size="1.33em" />Math lover</Pill>
-    </div>
-  </Hero>
-
-  <canvas
-    id="canvas"
-    aria-label="Background lighthouse animation"
-    role="img"></canvas>
-</header>
-
 <BaseLayout>
+  <header class="hero">
+    <Hero title="Hi, I'm Hugo Billé" tagline="I code cool stuff" align="start">
+      <div class="roles">
+        <Pill><Icon name="tabler:code" size="1.33em" />Developer</Pill>
+        <Pill><Icon name="tabler:plant" size="1.33em" />Gardner</Pill>
+        <Pill><Icon name="tabler:math" size="1.33em" />Math lover</Pill>
+      </div>
+    </Hero>
+
+    <canvas id="canvas" aria-label="Background lighthouse animation" role="img"
+    ></canvas>
+  </header>
+
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">
-      
-
       <Skills />
     </div>
   </div>
+
 </BaseLayout>
 
 <style>
@@ -56,9 +50,6 @@ const projects = (await getCollection("projects"))
     align-items: center;
     gap: 2rem;
     height: 100%;
-  }
-
-  .hero {
     position: relative;
   }
 
@@ -225,7 +216,7 @@ const projects = (await getCollection("projects"))
   for (let i = 0; i < 1000; i++) {
     pixels.push(
       create_pixel(
-        Math.random() * canvas.width - canvas.width*1.1,
+        Math.random() * canvas.width - canvas.width * 1.1,
         Math.random() * canvas.height,
         50
       )
