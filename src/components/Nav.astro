@@ -39,8 +39,10 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
 <nav>
   <div class="menu-header">
     <a href="/" class="site-title">
-      <Icon name="simple-icons:saturn" size="2em" />
-      Pixelmancer
+      <div>
+      <Icon name="simple-icons:saturn" size="2em" color="white"/>
+      <span>Pixelmancer</span>
+    </div>
     </a>
   </div>
 
@@ -76,8 +78,19 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
 
   .menu-header {
     display: flex;
+    justify-content: center;
     justify-content: space-between;
     gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .site-title div{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
   }
 
   .nav-items {
