@@ -1,35 +1,43 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
-import GenerativeArtPreview from '../components/GenerativeArtPreview.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import GenerativeArtPreview from "../components/GenerativeArtPreview.astro";
 
-const projects = (await getCollection('generative_art'));
-
+const projects = await getCollection("generative_art");
 ---
 
 <BaseLayout
-	title="Generative Art | Hugo Billé"
-	description="Learn about Hugo Billé's most recent projects"
+  title="Generative Art | Hugo Billé"
+  description="Learn about Hugo Billé's most recent projects"
 >
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
-			<Hero
-				title="Generative Art"
-				tagline="Feel free to take a look at all my creations!"
-				align="start"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<GenerativeArtPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-	</div>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <Hero
+        title="Generative Art"
+        tagline="Feel free to take a look at all my creations!"
+        align="start"
+      />
+      <Grid variant="offset">
+        {
+          (projects.map((project) => (
+            <li>
+              <GenerativeArtPreview project={project} />
+            </li>
+          )))
+        }
+      </Grid>
+    </main>
+  </div>
 </BaseLayout>
+
+<script>
+  function randomize<T>(array: T[]) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+</script>

@@ -1,35 +1,38 @@
 ---
 title: Advent of Code
-publishDate: 2020-03-02 00:00:00
+publishDate: 2022-05-13 16:00:00
 img: /projects/advent-of-code.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img_alt: A ascii art tree with a the 'C' as its star
 description: |
-  Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh!
+  Uma alternativa bem mais natalina ao leetcode e codewars
 tags:
-  - Design
   - Dev
-  - User Testing
+  - Problem solving
+  - Algorithms
 ---
 
-## Level-two heading
+## O que é Advent of Code?
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+> A comunidade de programadores é única, mas as vezes ela me surpreende
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+A não muito tempo, logo após começar a trabalhar com desenvolvimento web, comecei a começar a sentir falta de um certo grau de desafio (provavelmente isso é masoquismo); não me leve a mal, eu gosto muito de desenvolver sistemas web, tanto que eu trabalho e estou graduando no curso de sistema de informação. Porém, muitos dos problemas com esse tipo de arquitetura de software podem ser resolvidos com pura pesquisa e dedicação.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+*Sempre vai existir uma biblioteca, um código no stackoverflow ou uma pequena gambiarra usando javscript que será capaz de resolver seus problemas*
 
-### Level-three heading
+Para não perder meu interesse pela programação, eu comecei a explorar o tal "generative art", muito provavelmente se você chegou até aqui provavelmente viu alguns dos meus projetos (se não, é só acessar <a href="/generative-art">esse link</a>). Eu amo esse tipo de projeto: é criativo, desafiador e super recompensador de ver funcionando, mas as vezes eu não estou muito no clima de usar javascript. Depois de certo convívio com essa... coisa, você cria uma relação de amor e ódio.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+Bem. Em uma das minhas pesquisas, me deparei com o [Advent of Code](https://adventofcode.com/), uma série de desafios de programação com tema de... *Natal!* Eu fique sem palavras, é uma ideia muito louca, mas o "astetic" do site e dos desafios são maravilhosos. 
 
-### Level-three heading
+## Leetcode e Codewars
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+De inicio, eu usei o Leetcode para reaprender a sintaxe do C. Eu não tenho muito oque falar sobre, é uma plataforma muito boa; um grande números de desafios são somente para assinantes mas é bem interessante para praticar algoritmos. O mesmo vale para o Codewars, mas essa é uma plataforma que usei por pouco tempo.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+Então, qual é o diferencial do Advent of Code? Além do tema natalino, você pode realizar os desafios em qualquer linguagem de programação, ou nem mesmo usando uma linguagem de programação. Como o desafio é obter o resultado correto, não importa como você obteu ele, o importante é chegar na resposta correta!
 
-#### Level-four heading
+## Como eu uso
 
-- We noted this
-- And also this other point
+Admito que não progredi muito ainda...
+
+Eu comecei pelos desafios de 2015, com o objetivo de completar todos os anos. Porém, comecei a faculdade e a trabalhar e não estou tento muito tempo para continuar, mas eventualmente vou pegar o ritmo novamente.
+
+Todas as [minhas soluções](https://github.com/Pixelmancer-64/advent_of_code) até o momento foram feitas usando Python e Javascript, mas pretendo usar algumas linguagens low level para eu praticar, como Rust e C++.

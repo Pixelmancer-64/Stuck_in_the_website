@@ -3,60 +3,50 @@ import { Icon } from "astro-icon";
 ---
 
 <section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
-		<!-- <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p> -->
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon name="ic:baseline-construction" size="3em" color="var(--accent-regular)" />
-		<h2>Wait a second!</h2>
-		<p>Sorry for this, but this website is under construction! Can you wait a little longer to see my other struff?</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<!-- <Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Strategy-Minded</h2>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p> -->
-	</div>
+
+	<div class=""></div>
+
+  <div class="stack gap-2 lg:gap-4">
+    <Icon
+      name="ic:baseline-construction"
+      size="3em"
+      color="var(--accent-regular)"
+    />
+    <h2>Opa... Temos um visitante!</h2>
+    <p>
+      Desculpa mesmo, mas eu ainda não terminei o meu nome site. Mas você já
+      pode explorar algumas coisas
+    </p>
+  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <h2><a href="/generative-art">Generative art</a></h2>
+    <h2><a href="/projects">Projects</a></h2>
+  </div>
 </section>
 
 <style>
-	.box {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-	}
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 1.5rem;
+    padding: 48px;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+  }
 
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
+  .skills {
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
 
-	.skills p {
-		color: var(--gray-400);
-	}
+  .skills h2 {
+    font-size: var(--text-lg);
+  }
 
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
-
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
-		}
-
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
-	}
+  .skills p {
+    color: var(--gray-400);
+  }
 </style>

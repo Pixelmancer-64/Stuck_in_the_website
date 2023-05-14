@@ -1,12 +1,10 @@
 import {
   distance,
   start_canvas,
-  Vector,
   Point,
   update_vector,
   normalize,
   Positioned_Vector,
-  random,
   random_color,
   clear_canvas,
 } from "../helpers/forge";
@@ -178,7 +176,7 @@ const bonsai = new Tree(10, 100, 30);
 
 clear_canvas(canvas, ctx)
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 50; i++) {
   bonsai.grow();
 }
 
