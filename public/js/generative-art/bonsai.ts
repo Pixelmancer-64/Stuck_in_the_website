@@ -10,7 +10,7 @@ import {
 } from "../helpers/forge";
 
 class Tree {
-  leaves: Array<Leaf> = [];
+  //leaves: Array<Leaf> = [];
   branches: Array<Branch> = [];
   max_branch_distance: number;
   min_branch_distance: number;
